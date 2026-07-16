@@ -1,7 +1,4 @@
-<div align="center">
-   
 <link rel="icon" type="image/jpeg"href="Web-home.png" />
-</div>
 
 # Run and deploy your AI Studio app
 
