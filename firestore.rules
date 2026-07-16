@@ -1,0 +1,20 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Allow read/write access on apps collection so the client can seed data if empty
+    match /apps/{document} {
+      allow read: if true;
+      allow write: if true;
+    }
+    
+    // Allow creation of visit logs for tracking user analytics
+    match /visits/{document} {
+      allow create, read, write: if true;
+    }
+    
+    // Allow user request submission logging
+    match /requests/{document} {
+      allow create, read, write: if true;
+    }
+  }
+}
